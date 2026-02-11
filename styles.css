@@ -1,0 +1,274 @@
+:root {
+  --bg: #f8fafc;
+  --card: rgba(255, 255, 255, 0.9);
+  --border: #e5e7eb;
+
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+
+  --danger: #ef4444;
+
+  --text: #0f172a;
+  --muted: #64748b;
+
+  --radius: 16px;
+  --blur: blur(12px);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  padding: 32px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+header p {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 360px 1fr;
+  }
+}
+
+
+.card {
+  background: var(--card);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.row {
+  margin-bottom: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.row label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.row.two {
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  border: 1px solid var(--border);
+
+  background: white;
+  font-size: 0.9rem;
+
+  transition: 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+button {
+  margin-top: 10px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  border: none;
+
+  font-weight: 500;
+  font-size: 0.9rem;
+
+  background: var(--primary);
+  color: white;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button.secondary {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+button.secondary:hover {
+  background: #dbeafe;
+}
+
+button.dangerTop {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+button.dangerTop:hover {
+  background: #fecaca;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.msg {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--primary);
+  min-height: 20px;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+  background: white;
+}
+
+thead {
+  background: var(--primary-light);
+}
+
+th {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+tbody tr {
+  transition: 0.15s ease;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+
+.summary {
+  margin-top: 22px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (min-width: 700px) {
+  .summary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+.sumBox {
+  background: var(--primary-light);
+  border: 1px solid #dbeafe;
+
+  padding: 14px;
+  border-radius: 14px;
+
+  text-align: center;
+}
+
+.sumBox .label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.sumBox .value {
+  margin-top: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.sumBox.highlight {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+}
+
+.sumBox.highlight .value,
+.sumBox.highlight .label {
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  padding: 28px 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
